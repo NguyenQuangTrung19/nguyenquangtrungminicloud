@@ -1,0 +1,47 @@
+{
+  "realm": "realm_nguyenquangtrung",
+  "enabled": true,
+
+  "loginWithEmailAllowed": true,
+  "registrationAllowed": false,
+  "resetPasswordAllowed": true,
+  "verifyEmail": false,
+
+  "requiredActions": [],
+
+  "clients": [
+    {
+      "clientId": "flask-app",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": true,
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": true,
+      "redirectUris": ["*"],
+      "webOrigins": ["*"]
+    }
+  ],
+
+  "users": [
+    {
+      "username": "sv01",
+      "enabled": true,
+      "email": "sv01@example.com",
+      "emailVerified": true,
+      "requiredActions": [],
+      "credentials": [
+        { "type": "password", "value": "sv01@123", "temporary": false }
+      ]
+    },
+    {
+      "username": "sv02",
+      "enabled": true,
+      "email": "sv02@example.com",
+      "emailVerified": true,
+      "requiredActions": [],
+      "credentials": [
+        { "type": "password", "value": "sv02@123", "temporary": false }
+      ]
+    }
+  ]
+}

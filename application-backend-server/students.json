@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Nguyen Quang Trung",
+    "major": "Cloud Computing",
+    "gpa": 3.5
+  },
+  { "id": 2, "name": "Khuu Trung Duong", "major": "Data Science", "gpa": 3.7 },
+  { "id": 3, "name": "Leo Messi", "major": "Software Eng.", "gpa": 3.2 },
+  {
+    "id": 4,
+    "name": "Cristiano Ronaldo",
+    "major": "Information Sec.",
+    "gpa": 3.8
+  },
+  { "id": 5, "name": "David Backham", "major": "AI & ML", "gpa": 3.4 }
+]

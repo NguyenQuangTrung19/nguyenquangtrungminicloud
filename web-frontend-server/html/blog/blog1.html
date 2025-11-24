@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hành trình xây dựng MyMiniCloud</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      :root {
+        --bg: radial-gradient(circle at top, #0f172a, #020617);
+        --card: rgba(15, 23, 42, 0.9);
+        --accent: #38bdf8;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --radius: 18px;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        color: var(--text);
+        background-image: var(--bg);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .page {
+        max-width: 900px;
+        width: 100%;
+        background: var(--card);
+        padding: 28px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(6px);
+        animation: fadeIn 0.6s ease forwards;
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 2rem;
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(56, 189, 248, 0.12);
+        color: var(--accent);
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+      }
+
+      img.hero {
+        width: 100%;
+        border-radius: 14px;
+        margin: 18px 0;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      }
+
+      p {
+        line-height: 1.75;
+        color: var(--muted);
+        margin-bottom: 16px;
+        font-size: 1.02rem;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .back {
+        margin-top: 24px;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="tag">Công nghệ • Microservices</div>
+      <h1>Hành trình xây dựng MyMiniCloud – từ Docker đến 9 microservices</h1>
+
+      <img
+        class="hero"
+        src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+        alt="Cloud infrastructure"
+      />
+
+      <p>
+        MyMiniCloud là dự án giúp mình tiếp cận thực tế mô hình hệ thống cloud
+        thông qua việc tự tay xây dựng 9 dịch vụ: Web Frontend, Backend API,
+        Database, Keycloak, MinIO, DNS nội bộ, Prometheus, Grafana và API
+        Gateway.
+      </p>
+
+      <p>
+        Từ một file <strong>docker-compose.yml</strong> đơn giản, mình học cách
+        cấu hình từng container sao cho chúng giao tiếp được với nhau trong mạng
+        nội bộ <code>cloud-net</code>. Bên cạnh đó, việc phục vụ web tĩnh,
+        reverse proxy qua Nginx, và tích hợp Keycloak để cấp token OIDC giúp
+        mình hiểu rõ hơn về kiến trúc dịch vụ hiện đại.
+      </p>
+
+      <p>
+        Khi kết hợp thêm bộ giám sát Prometheus + Grafana, mình thấy được các
+        chỉ số CPU, RAM, Network trong thời gian thực – rất giống với cách các
+        cloud provider quản lý hệ thống thật ngoài đời.
+      </p>
+
+      <div class="back">
+        ← <a href="/blog/">Về trang Blog</a> • <a href="/">Trang chủ</a>
+      </div>
+    </div>
+  </body>
+</html>

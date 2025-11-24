@@ -1,0 +1,40 @@
+nguyenquangtrungminicloud/
+├─ .env
+├─ Makefile
+├─ README.md
+├─ docker-compose.yml
+├─ web-frontend-server/
+│   └── html/
+│      ├── index.html
+│      └── blog/
+│         ├── index.html
+│         ├── blog1.html
+│         ├── blog2.html
+│         ├── blog3.html
+├─ application-backend-server/
+│  ├─ Dockerfile
+│  ├─ app.py
+│  └─ students.json
+├─ relational-database-server/
+│  └─ init/
+│     └─ 001_init.sql
+├─ authentication-identity-server/
+│  └─ realm/
+│     └─ realm_nguyenquangtrung.json
+├─ object-storage-server/
+│  ├─ data/
+│  └─ sample/
+│        └─ hello.txt
+├─ internal-dns-server/
+│  ├─ named.conf.local
+│  ├─ named.conf.options
+│  └─ db.cloud.local
+├─ monitoring-prometheus-server/
+│  └─ prometheus.yml
+├─ monitoring-grafana-dashboard-server/
+├─ monitoring-node-exporter-server/
+└─ api-gateway-proxy-server/
+   └─ nginx.conf
+
+
+   

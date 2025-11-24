@@ -1,0 +1,6 @@
+zone "cloud.local" {
+    type master;
+    file "/var/lib/bind/db.cloud.local";
+};
+
+

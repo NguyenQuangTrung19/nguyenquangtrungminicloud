@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <title>MyMiniCloud – Home</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      :root {
+        --bg-gradient: linear-gradient(135deg, #020617, #0f172a, #1d4ed8);
+        --card-bg: rgba(15, 23, 42, 0.9);
+        --accent: #38bdf8;
+        --accent-soft: rgba(56, 189, 248, 0.1);
+        --text-main: #e5e7eb;
+        --text-muted: #9ca3af;
+        --radius: 18px;
+        --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.7);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        color: var(--text-main);
+        background-image: var(--bg-gradient);
+        background-attachment: fixed;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+      }
+
+      .page {
+        width: 100%;
+        max-width: 1120px;
+        padding: 24px 16px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .glass {
+        background: radial-gradient(
+            circle at top left,
+            rgba(56, 189, 248, 0.18),
+            transparent 55%
+          ),
+          rgba(15, 23, 42, 0.75);
+        border-radius: 24px;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        box-shadow: var(--shadow-soft);
+        padding: 20px 20px 28px;
+        backdrop-filter: blur(12px);
+      }
+
+      /* NAVBAR */
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 30%, #facc15, #f97316);
+        box-shadow: 0 0 0 2px rgba(248, 250, 252, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 15px;
+        color: #0f172a;
+      }
+
+      .logo-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .logo-text span:first-child {
+        font-weight: 600;
+        font-size: 0.98rem;
+      }
+
+      .logo-text span:last-child {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 12px;
+        font-size: 0.86rem;
+      }
+
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        padding: 4px 10px;
+        border-radius: 999px;
+        transition: 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        background: rgba(15, 23, 42, 0.8);
+        color: #f9fafb;
+      }
+
+      .nav-cta {
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        border: 1px solid rgba(56, 189, 248, 0.4);
+        font-size: 0.82rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: 0.2s ease;
+      }
+
+      .nav-cta:hover {
+        background: rgba(56, 189, 248, 0.2);
+        transform: translateY(-1px);
+      }
+
+      /* LAYOUT 2 CỘT */
+      .content {
+        display: grid;
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
+        gap: 20px;
+        align-items: stretch;
+      }
+
+      @media (max-width: 900px) {
+        .content {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
+      /* HERO */
+      .hero {
+        padding: 18px 16px 24px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(15, 118, 110, 0.15);
+        color: #a5f3fc;
+        font-size: 0.78rem;
+        margin-bottom: 10px;
+      }
+
+      .badge-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: #22c55e;
+        box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+      }
+
+      h1 {
+        margin: 4px 0 8px;
+        font-size: clamp(1.8rem, 3vw, 2.3rem);
+        letter-spacing: -0.03em;
+      }
+
+      .hero-highlight {
+        background: linear-gradient(to right, #38bdf8, #a855f7, #f97316);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .hero-desc {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        margin-bottom: 18px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .btn-primary,
+      .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: 0.2s ease;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #38bdf8, #6366f1);
+        color: #0b1120;
+        border: none;
+        box-shadow: 0 12px 30px rgba(59, 130, 246, 0.35);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 16px 40px rgba(59, 130, 246, 0.45);
+      }
+
+      .btn-ghost {
+        background: rgba(15, 23, 42, 0.7);
+        color: var(--text-main);
+        border: 1px solid rgba(148, 163, 184, 0.6);
+      }
+
+      .btn-ghost:hover {
+        background: rgba(15, 23, 42, 0.95);
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 6px;
+      }
+
+      .hero-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: rgba(148, 163, 184, 0.9);
+      }
+
+      /* BÊN PHẢI: CARD BLOG */
+      .blog-panel {
+        padding: 18px 18px 22px;
+        background: radial-gradient(
+            circle at top right,
+            rgba(56, 189, 248, 0.22),
+            transparent 65%
+          ),
+          rgba(15, 23, 42, 0.9);
+        border-radius: var(--radius);
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .blog-panel::before {
+        content: "";
+        position: absolute;
+        inset: -40%;
+        background: radial-gradient(
+          circle at top,
+          rgba(56, 189, 248, 0.1),
+          transparent 55%
+        );
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .blog-panel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .blog-panel h2 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+
+      .badge-small {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+      }
+
+      .blog-list {
+        list-style: none;
+        padding: 0;
+        margin: 12px 0 0;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .blog-item {
+        padding: 10px 10px 12px;
+        border-radius: 12px;
+        background: rgba(15, 23, 42, 0.82);
+        border: 1px solid rgba(15, 23, 42, 0.9);
+        transition: 0.2s ease;
+      }
+
+      .blog-item:hover {
+        transform: translateY(-2px);
+        background: rgba(15, 23, 42, 1);
+        border-color: rgba(56, 189, 248, 0.7);
+        box-shadow: 0 12px 26px rgba(15, 23, 42, 0.9);
+      }
+
+      .blog-title {
+        margin: 0 0 4px;
+        font-size: 0.92rem;
+      }
+
+      .blog-title a {
+        color: #e5e7eb;
+        text-decoration: none;
+      }
+
+      .blog-title a:hover {
+        text-decoration: underline;
+      }
+
+      .blog-meta {
+        font-size: 0.76rem;
+        color: var(--text-muted);
+        margin-bottom: 3px;
+      }
+
+      .blog-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.75rem;
+        color: #a5f3fc;
+      }
+
+      .pill-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: #38bdf8;
+      }
+
+      footer {
+        margin-top: 10px;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        text-align: right;
+      }
+
+      /* HIỆU ỨNG FADE-IN */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(6px);
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .fade-in.delay-1 {
+        animation-delay: 0.08s;
+      }
+
+      .fade-in.delay-2 {
+        animation-delay: 0.16s;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="glass fade-in">
+        <nav class="nav">
+          <div class="logo">
+            <div class="logo-mark">MC</div>
+            <div class="logo-text">
+              <span>MyMiniCloud</span>
+              <span>Cloud lab • Student project</span>
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="/">Trang chủ</a>
+            <a href="/blog/">Blog cá nhân</a>
+            <a href="/api/hello">API /hello</a>
+            <a class="nav-cta" href="/auth/">
+              Đăng nhập hệ thống
+              <span>⟶</span>
+            </a>
+          </div>
+        </nav>
+
+        <section class="content">
+          <!-- Cột trái: hero -->
+          <section class="hero fade-in delay-1">
+            <div class="badge">
+              <span class="badge-dot"></span>
+              Hệ thống MiniCloud gồm 9 dịch vụ • Đang chạy
+            </div>
+            <h1>
+              Mô phỏng một
+              <span class="hero-highlight">nền tảng Cloud thu nhỏ</span>
+              để học kiến trúc hệ thống hiện đại.
+            </h1>
+            <p class="hero-desc">
+              MyMiniCloud bao gồm Web Frontend, Backend API, Database, Keycloak,
+              MinIO, DNS nội bộ, Prometheus, Grafana và API Gateway. Toàn bộ
+              được triển khai bằng Docker Compose trên một mạng ảo duy nhất.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn-primary" href="/blog/"> Xem Blog cá nhân </a>
+              <a class="btn-ghost" href="/api/hello"> Kiểm tra API /hello </a>
+            </div>
+
+            <div class="hero-meta">
+              <span><span class="dot"></span> 9 microservices trong 1 cụm</span>
+              <span
+                ><span class="dot"></span> Tích hợp Auth, Storage,
+                Monitoring</span
+              >
+              <span
+                ><span class="dot"></span> Dành cho môn Điện toán đám mây</span
+              >
+            </div>
+          </section>
+
+          <!-- Cột phải: blog preview -->
+          <aside class="blog-panel fade-in delay-2">
+            <div class="blog-panel-header">
+              <h2>Nhật ký học tập & dự án</h2>
+              <span class="badge-small">3 bài viết gần đây</span>
+            </div>
+
+            <ul class="blog-list">
+              <li class="blog-item">
+                <p class="blog-meta">Công nghệ • ~5 phút đọc</p>
+                <h3 class="blog-title">
+                  <a href="/blog/blog1.html">
+                    Hành trình xây dựng MyMiniCloud – từ Docker đến 9 dịch vụ
+                  </a>
+                </h3>
+                <div class="blog-tag">
+                  <span class="pill-dot"></span>
+                  Docker • Microservices • DevOps
+                </div>
+              </li>
+              <li class="blog-item">
+                <p class="blog-meta">Học tập • ~4 phút đọc</p>
+                <h3 class="blog-title">
+                  <a href="/blog/blog2.html">
+                    Một ngày học & code: cân bằng giữa deadline và năng lượng
+                  </a>
+                </h3>
+                <div class="blog-tag">
+                  <span class="pill-dot"></span>
+                  Study • Productivity
+                </div>
+              </li>
+              <li class="blog-item">
+                <p class="blog-meta">Du lịch • ~3 phút đọc</p>
+                <h3 class="blog-title">
+                  <a href="/blog/blog3.html">
+                    Chuyến đi Đà Lạt: reset bản thân sau mùa deadline
+                  </a>
+                </h3>
+                <div class="blog-tag">
+                  <span class="pill-dot"></span>
+                  Travel • Refresh
+                </div>
+              </li>
+            </ul>
+
+            <footer>© 2025 – Blog cá nhân triển khai trên MyMiniCloud.</footer>
+          </aside>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

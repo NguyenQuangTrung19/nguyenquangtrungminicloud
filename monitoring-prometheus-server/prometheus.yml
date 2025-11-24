@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # Scrape chính Prometheus để tự giám sát
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # Scrape Node Exporter đang chạy trong cùng network (cloud-net)
+  - job_name: "node"
+    static_configs:
+      - targets:
+          - "monitoring-node-exporter-server:9100"

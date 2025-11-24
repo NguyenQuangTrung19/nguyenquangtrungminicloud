@@ -1,0 +1,19 @@
+$TTL    604800
+@       IN      SOA     ns.cloud.local. admin.cloud.local. (
+                        2025110802    ; Serial
+                        604800     ; Refresh
+                        86400      ; Retry
+                        2419200    ; Expire
+                        604800 )   ; Negative Cache TTL
+;
+
+@       IN      NS      ns.cloud.local.
+ns      IN      A       172.20.0.6
+
+web-frontend-server            IN A 172.20.0.2
+application-backend-server     IN A 172.20.0.3
+relational-database-server     IN A 172.20.0.7
+authentication-identity-server IN A 172.20.0.5
+object-storage-server          IN A 172.20.0.4
+
+
