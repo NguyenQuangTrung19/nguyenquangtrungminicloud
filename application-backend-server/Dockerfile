@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Cài phụ thuộc
-RUN pip install --no-cache-dir flask
+RUN pip install --no-cache-dir flask pymysql python-jose
 
 # Biến môi trường & cổng nội bộ
 ENV PORT=8081
