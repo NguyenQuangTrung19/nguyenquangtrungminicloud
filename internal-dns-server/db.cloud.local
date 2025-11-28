@@ -16,4 +16,12 @@ relational-database-server     IN A 172.20.0.7
 authentication-identity-server IN A 172.20.0.5
 object-storage-server          IN A 172.20.0.4
 
+; Mở rộng #6
+; 1) app-backend.cloud.local → 10.10.10.20
+app-backend     IN A 10.10.10.20
 
+; 2) minio.cloud.local → MinIO
+minio           IN A 172.20.0.4
+
+; 3) keycloak.cloud.local → Keycloak
+keycloak        IN A 172.20.0.5
