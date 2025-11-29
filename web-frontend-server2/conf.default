@@ -1,0 +1,32 @@
+server {
+  listen 80;
+  server_name _;
+
+  # Thư mục chứa web tĩnh
+  root  /usr/share/nginx/html;
+  index index.html;
+
+  # Trang chủ: đảm bảo / trả về index.html, nếu thiếu thì 404
+  location = / {
+    try_files /index.html =404;
+  }
+
+  # Blog: alias đến thư mục blog (NHỚ có dấu / ở cuối)
+  location ^~ /blog/ {
+    alias /usr/share/nginx/html/blog/;
+    index index.html;
+    # Nếu truy cập /blog hoặc /blog/abc (không có file) -> trả blog/index.html
+    try_files $uri $uri/ /blog/index.html;
+    autoindex off;
+  }
+
+  # Các đường dẫn khác: chỉ phục vụ file tĩnh, không có thì 404
+  location / {
+    try_files $uri $uri/ =404;
+  }
+
+  location /metrics {
+        default_type text/plain;
+        return 200 "web_frontend_up 1\n";
+    }
+}

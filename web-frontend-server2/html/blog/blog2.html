@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <title>Một ngày học & code</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      :root {
+        --bg: radial-gradient(circle at top, #0f172a, #020617);
+        --card: rgba(15, 23, 42, 0.9);
+        --accent: #38bdf8;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --radius: 18px;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        color: var(--text);
+        background-image: var(--bg);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .page {
+        max-width: 900px;
+        width: 100%;
+        background: var(--card);
+        padding: 28px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(6px);
+        animation: fadeIn 0.6s ease forwards;
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        margin-top: 0;
+        font-size: 2rem;
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(56, 189, 248, 0.12);
+        color: var(--accent);
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+      }
+
+      img.hero {
+        width: 100%;
+        border-radius: 14px;
+        margin: 18px 0;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      }
+
+      p {
+        line-height: 1.75;
+        color: var(--muted);
+        font-size: 1.02rem;
+        margin-bottom: 16px;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .back {
+        margin-top: 24px;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="tag">Học tập • Productivity</div>
+      <h1>Một ngày học & code: cân bằng giữa deadline và năng lượng</h1>
+
+      <img
+        class="hero"
+        src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80"
+        alt="Study desk"
+      />
+
+      <p>
+        Là sinh viên IT, việc học và code mỗi ngày là chuyện quen thuộc, nhưng
+        để giữ được năng lượng và sự tập trung xuyên suốt thì lại không hề dễ.
+        Mình đã thử nhiều cách trước khi tìm được một nhịp sinh hoạt phù hợp.
+      </p>
+
+      <p>
+        Mình thường bắt đầu ngày mới bằng việc xem lại danh sách công việc: bài
+        lab, đồ án cloud, bài tập nhóm… Sau đó chia nhỏ từng nhiệm vụ theo
+        phương pháp Pomodoro 25 phút, giúp đầu óc thoải mái hơn khi làm việc.
+      </p>
+
+      <p>
+        Việc làm MyMiniCloud cũng vậy – mỗi ngày mình chỉ làm một mảng nhỏ: hôm
+        nay viết API, ngày mai cấu hình DNS, hôm khác build lại Nginx gateway.
+        Nhờ thế mình tránh bị “ngợp” khi nhìn vào cả hệ thống lớn.
+      </p>
+
+      <p>
+        Giữa những giờ học, mình luôn dành thời gian để đi dạo, pha cà phê hoặc
+        nói chuyện với bạn bè để giữ tinh thần thoải mái. Sức khỏe tinh thần tốt
+        giúp học nhanh hơn và code ít bug hơn!
+      </p>
+
+      <div class="back">
+        ← <a href="/blog/">Về trang Blog</a> • <a href="/">Trang chủ</a>
+      </div>
+    </div>
+  </body>
+</html>

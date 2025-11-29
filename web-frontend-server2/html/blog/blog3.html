@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <title>Chuyến đi Đà Lạt</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      :root {
+        --bg: radial-gradient(circle at top, #0f172a, #020617);
+        --card: rgba(15, 23, 42, 0.9);
+        --accent: #38bdf8;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --radius: 18px;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        color: var(--text);
+        background-image: var(--bg);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .page {
+        max-width: 900px;
+        width: 100%;
+        background: var(--card);
+        padding: 28px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(6px);
+        animation: fadeIn 0.6s ease forwards;
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        margin-top: 0;
+        font-size: 2rem;
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(56, 189, 248, 0.12);
+        color: var(--accent);
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+      }
+
+      img.hero {
+        width: 100%;
+        border-radius: 14px;
+        margin: 18px 0;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      }
+
+      p {
+        line-height: 1.75;
+        color: var(--muted);
+        font-size: 1.02rem;
+        margin-bottom: 16px;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .back {
+        margin-top: 24px;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="tag">Du lịch • Nghỉ ngơi</div>
+      <h1>Chuyến đi Đà Lạt: reset bản thân sau mùa deadline</h1>
+
+      <img
+        class="hero"
+        src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80"
+        alt="Da Lat hills"
+      />
+
+      <p>
+        Sau chuỗi ngày chạy deadline với các bài lab, đồ án và đặc biệt là dự án
+        MyMiniCloud, mình quyết định thưởng cho bản thân một chuyến đi ngắn tới
+        Đà Lạt – nơi mà không khí lạnh nhẹ và sự bình yên giúp mình “reset” năng
+        lượng.
+      </p>
+
+      <p>
+        Trong ba ngày ở Đà Lạt, mình gần như không mở laptop. Buổi sáng uống cà
+        phê, đi dạo quanh hồ Xuân Hương, chiều ngồi ở một quán nhỏ ngắm mây
+        trôi. Điều đó giúp mình bình tĩnh hơn và nhìn lại những gì đã đạt được.
+      </p>
+
+      <p>
+        Khi trở về và mở lại dự án MyMiniCloud, mọi thứ bỗng trở nên rõ ràng và
+        dễ hiểu hơn. Đôi khi nghỉ ngơi đúng lúc lại chính là cách để học hiệu
+        quả hơn.
+      </p>
+
+      <div class="back">
+        ← <a href="/blog/">Về trang Blog</a> • <a href="/">Trang chủ</a>
+      </div>
+    </div>
+  </body>
+</html>
