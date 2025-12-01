@@ -11,6 +11,14 @@ nguyenquangtrungminicloud/
 │         ├── blog1.html
 │         ├── blog2.html
 │         ├── blog3.html
+├─ web-frontend-server2/
+│   └── html/
+│      ├── index.html
+│      └── blog/
+│         ├── index.html
+│         ├── blog1.html
+│         ├── blog2.html
+│         ├── blog3.html
 ├─ application-backend-server/
 │  ├─ Dockerfile
 │  ├─ app.py
