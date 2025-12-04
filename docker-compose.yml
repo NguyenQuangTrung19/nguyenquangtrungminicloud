@@ -94,9 +94,9 @@ services:
       - ./internal-dns-server/db.cloud.local:/var/lib/bind/db.cloud.local:ro
     networks: [default]
     restart: unless-stopped
-    ports:
-      - "${DNS_PORT_UDP}:53/udp"
-      - "${DNS_PORT_TCP}:53/tcp"
+    # ports:
+    #   - "${DNS_PORT_UDP}:53/udp"
+    #   - "${DNS_PORT_TCP}:53/tcp"
 
   # 7) MONITORING - Prometheus
   monitoring-prometheus-server:
